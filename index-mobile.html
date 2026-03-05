@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Justin Enoch</title>
+  <style>
+    @font-face {
+      font-family: 'AuthenticSans';
+      src: url('AUTHENTICSans-60.woff2') format('woff2'), url('AUTHENTICSans-60.woff') format('woff');
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: 'AuthenticSans';
+      src: url('AUTHENTICSans-90.woff2') format('woff2'), url('AUTHENTICSans-90.woff') format('woff');
+      font-weight: 500;
+    }
+    @font-face {
+      font-family: 'AuthenticSans';
+      src: url('AUTHENTICSans-130.woff2') format('woff2'), url('AUTHENTICSans-130.woff') format('woff');
+      font-weight: 700;
+    }
+    @font-face {
+      font-family: 'AuthenticSans';
+      src: url('AUTHENTICSans-150.woff2') format('woff2'), url('AUTHENTICSans-150.woff') format('woff');
+      font-weight: 900;
+    }
+    @font-face {
+      font-family: 'AuthenticSansCondensed';
+      src: url('AUTHENTICSans-Condensed-60.woff2') format('woff2'), url('AUTHENTICSans-Condensed-60.woff') format('woff');
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: 'AuthenticSansCondensed';
+      src: url('AUTHENTICSans-Condensed-90.woff2') format('woff2'), url('AUTHENTICSans-Condensed-90.woff') format('woff');
+      font-weight: 500;
+    }
+    @font-face {
+      font-family: 'AuthenticSansCondensed';
+      src: url('AUTHENTICSans-Condensed-130.woff2') format('woff2'), url('AUTHENTICSans-Condensed-130.woff') format('woff');
+      font-weight: 700;
+    }
+    @font-face {
+      font-family: 'AuthenticSansCondensed';
+      src: url('AUTHENTICSans-Condensed-150.woff2') format('woff2'), url('AUTHENTICSans-Condensed-150.woff') format('woff');
+      font-weight: 900;
+    }
+     @font-face {
+      font-family: 'FlorDeRuina';
+      src: url('FlorDeRuina-Flor.woff2') format('woff2'), url('FlorDeRuina-Flor.woff') format('woff');
+      font-weight: 100;
+    }
+     @font-face {
+      font-family: 'FlorDeRuina';
+      src: url('FlorDeRuina-Fractura.woff2') format('woff2'), url('FlorDeRuina-Fractura.woff') format('woff');
+      font-weight: 200;
+    }
+     @font-face {
+      font-family: 'FlorDeRuina';
+      src: url('FlorDeRuina-Germen.woff2') format('woff2'), url('FlorDeRuina-Germen.woff') format('woff');
+      font-weight: 300;
+    }
+     @font-face {
+      font-family: 'FlorDeRuina';
+      src: url('FlorDeRuina-Ruina.woff2') format('woff2'), url('FlorDeRuina-Ruina.woff') format('woff');
+      font-weight: 400;
+    }
+     @font-face {
+      font-family: 'FlorDeRuina';
+      src: url('FlorDeRuina-Semilla.woff2') format('woff2'), url('FlorDeRuina-Semilla.woff') format('woff');
+      font-weight: 500;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f2f0eb;
+      --ink: #111;
+      --red: #e8220a;
+      --muted: #888;
+      --rule: 1px solid #c8c4bd;
+      --nav-h: 38px;
+      --left-w: 195px;
+    }
+
+    html { font-size: 15px; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'AuthenticSans', sans-serif;
+      font-weight: 400;
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    a:hover { color: var(--red); }
+
+    /* ─── TOP NAV ─── */
+    .top-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg);
+      border-bottom: var(--rule);
+      height: var(--nav-h);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+    }
+
+    .nav-name {
+      font-family: 'AuthenticSans', sans-serif;
+      font-weight: 700;
+      font-size: 0.82rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--red);
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 24px;
+    }
+    .nav-links a {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      transition: color 0.12s;
+    }
+    .nav-links a:hover { color: var(--red); }
+
+    /* ─── BODY GRID ─── */
+    .body-grid {
+      display: grid;
+      grid-template-columns: var(--left-w) 1fr;
+      min-height: calc(100vh - var(--nav-h));
+    }
+
+    /* ─── LEFT COL ─── */
+    .left-col {
+      position: sticky;
+      top: var(--nav-h);
+      height: calc(100vh - var(--nav-h));
+      overflow-y: auto;
+      border-right: var(--rule);
+      padding: 24px 16px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .left-section { margin-bottom: 20px; }
+
+    .left-label {
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--red);
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .left-links { list-style: none; }
+    .left-links a {
+      font-size: 0.78rem;
+      font-weight: 400;
+      color: var(--ink);
+      opacity: 0.5;
+      display: block;
+      line-height: 1.8;
+      transition: opacity 0.1s;
+    }
+    .left-links a:hover { opacity: 1; color: var(--red); }
+
+    .left-items { list-style: none; }
+    .left-items li {
+      font-size: 0.78rem;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .left-rule { border: none; border-top: var(--rule); margin: 14px 0; }
+
+    .left-bottom {
+      margin-top: auto;
+      padding-top: 14px;
+      border-top: var(--rule);
+    }
+    .left-bottom a {
+      font-size: 0.74rem;
+      color: var(--muted);
+      display: block;
+      line-height: 1.85;
+    }
+    .left-bottom a:hover { color: var(--red); }
+
+    /* ─── RIGHT COL ─── */
+    .right-col { min-width: 0; }
+
+    /* ─── HEADER ─── */
+    .page-header {
+      display: grid;
+      grid-template-columns: 1fr 260px;
+      border-bottom: var(--rule);
+    }
+
+    .header-bio {
+      padding: 30px 28px;
+      border-right: var(--rule);
+    }
+
+    .header-name {
+      font-family: 'FlorDeRuina', sans-serif;
+      font-weight: 200;
+      font-size: 5rem;
+      line-height: 0.9;
+      text-transform: uppercase;
+      color: var(--red);
+      letter-spacing: -0.01em;
+      margin-bottom: 22px;
+    }
+
+    .bio-text {
+      font-size: 0.83rem;
+      font-weight: 400;
+      line-height: 1.75;
+      color: #3a3a3a;
+      max-width: 540px;
+    }
+    .bio-link {
+      display: inline-block;
+      font-size: .83rem;
+      font-weight: 500;
+      line-height: 1.75;
+      color: var(--red);
+      opacity: 0.7;
+      margin-top: 4px;
+    }
+    .bio-link:hover { opacity: 1; color: var(--red); }
+    .bio-text p + p { margin-top: 0.8em; }
+
+    .header-photo { overflow: hidden; }
+    .header-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      filter: grayscale(15%);
+    }
+
+    /* ─── SECTION LABEL ─── */
+    .section-label {
+      padding: 7px 28px;
+      border-bottom: var(--rule);
+      font-size: 0.57rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--red);
+    }
+
+    /* ─── QUICK HITS ─── */
+    .hit {
+      display: grid;
+      grid-template-columns: 1fr 185px 155px;
+      border-bottom: var(--rule);
+      transition: background 0.1s;
+      cursor: default;
+    }
+    .hit:hover { background: var(--red); color: var(--bg); }
+    .hit:hover .hit-dir,
+    .hit:hover .hit-role { color: rgba(242,240,235,0.5); }
+    .hit:hover .hit-name,
+    .hit:hover .hit-dir { border-color: transparent; }
+
+    .hit-name {
+      padding: 13px 28px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      border-right: var(--rule);
+      transition: border-color 0.1s;
+    }
+    .hit-dir {
+      padding: 13px 16px;
+      font-size: 0.7rem;
+      font-weight: 400;
+      color: var(--muted);
+      border-right: var(--rule);
+      display: flex;
+      align-items: center;
+      transition: border-color 0.1s;
+    }
+    .hit-role {
+      padding: 13px 16px;
+      font-size: 0.7rem;
+      font-weight: 400;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+    }
+
+    /* ─── CV ─── */
+    .cv-year {
+      padding: 5px 28px;
+      border-bottom: var(--rule);
+      border-top: 2px solid var(--red);
+      font-family: 'AuthenticSansCondensed', sans-serif;
+      font-weight: 900;
+      font-size: 1.9rem;
+      text-transform: uppercase;
+      color: var(--red);
+      letter-spacing: 0.01em;
+    }
+
+    .cv-entry {
+      display: grid;
+      grid-template-columns: 1fr 125px;
+      border-bottom: var(--rule);
+      transition: background 0.1s;
+    }
+    .cv-entry:hover { background: rgba(192,57,43,0.04); }
+
+    .cv-left {
+      padding: 11px 28px;
+      border-right: var(--rule);
+    }
+
+    .cv-title {
+      font-size: 0.88rem;
+      font-weight: 500;
+      line-height: 1.35;
+      margin-bottom: 2px;
+    }
+
+    .cv-meta {
+      font-size: 0.69rem;
+      font-weight: 400;
+      color: var(--muted);
+    }
+
+    .cv-awards {
+      list-style: none;
+      margin-top: 3px;
+    }
+    .cv-awards li {
+      font-size: 0.67rem;
+      color: #666;
+      line-height: 1.55;
+    }
+    .cv-awards li::before { content: '↳ '; color: var(--red); opacity: 0.6; }
+
+    .cv-link {
+      display: inline-block;
+      font-size: 0.66rem;
+      font-weight: 500;
+      color: var(--red);
+      opacity: 0.7;
+      margin-top: 4px;
+    }
+    .cv-link:hover { opacity: 1; color: var(--red); }
+
+    .cv-right {
+      padding: 11px 14px;
+      font-size: 0.66rem;
+      font-weight: 700;
+      color: var(--muted);
+      line-height: 1.65;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* ─── FOOTER ─── */
+    .page-footer {
+      border-top: 2px solid var(--red);
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .footer-col {
+      padding: 26px 28px;
+      border-right: var(--rule);
+    }
+    .footer-col:last-child { border-right: none; }
+
+    .footer-col-label {
+      font-size: 0.57rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--red);
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .footer-name {
+      font-family: 'AuthenticSansCondensed', sans-serif;
+      font-weight: 900;
+      font-size: 2.2rem;
+      text-transform: uppercase;
+      color: var(--red);
+      line-height: 0.95;
+      display: block;
+    }
+
+    .footer-col a {
+      display: block;
+      font-size: 0.76rem;
+      color: var(--muted);
+      line-height: 1.85;
+    }
+    .footer-col a:hover { color: var(--red); }
+
+    .footer-base {
+      padding: 9px 28px;
+      border-top: var(--rule);
+      font-size: 0.58rem;
+      font-weight: 500;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 860px) {
+      :root { --left-w: 150px; }
+      .page-header { grid-template-columns: 1fr; }
+      .header-photo { height: 240px; border-right: none; border-top: var(--rule); }
+      .hit { grid-template-columns: 1fr; }
+      .hit-name, .hit-dir { border-right: none; }
+      .cv-entry { grid-template-columns: 1fr; }
+      .cv-left { border-right: none; }
+      .cv-right { border-top: var(--rule); }
+      .page-footer { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      /* Nav: tighter, no wrapping */
+      .top-nav {
+        height: auto;
+        padding: 10px 16px;
+        flex-wrap: nowrap;
+        gap: 12px;
+      }
+      .nav-name {
+        font-size: 0.75rem;
+        flex-shrink: 0;
+      }
+      .nav-links {
+        gap: 14px;
+        flex-wrap: nowrap;
+      }
+      .nav-links a {
+        font-size: 0.6rem;
+        letter-spacing: 0.08em;
+      }
+
+      /* Hide left col entirely on mobile — nav already has the links */
+      .body-grid {
+        grid-template-columns: 1fr;
+      }
+      .left-col {
+        display: none;
+      }
+
+      /* Stack header photo below bio */
+      .page-header {
+        grid-template-columns: 1fr;
+      }
+      .header-bio {
+        padding: 22px 18px;
+        border-right: none;
+      }
+      .header-name {
+        font-size: 3.8rem;
+        margin-bottom: 16px;
+      }
+      .header-photo {
+        height: 260px;
+        border-top: var(--rule);
+      }
+
+      /* CV entries single column */
+      .cv-left { padding: 10px 18px; border-right: none; }
+      .cv-right { padding: 8px 18px; border-top: var(--rule); }
+      .section-label { padding: 7px 18px; }
+      .cv-year { padding: 5px 18px; }
+
+      /* Hits single column */
+      .hit-name { padding: 12px 18px; border-right: none; }
+      .hit-dir, .hit-role { padding: 4px 18px; }
+      .hit-dir { border-right: none; }
+
+      /* Footer single column */
+      .page-footer { grid-template-columns: 1fr; }
+      .footer-col { border-right: none; border-bottom: var(--rule); padding: 20px 18px; }
+      .footer-base { padding: 9px 18px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOP NAV -->
+<nav class="top-nav">
+  <span class="nav-name">Justin Enoch</span>
+  <ul class="nav-links">
+    <li><a href="#hits">Quick Hits</a></li>
+    <li><a href="#cv">Extended CV</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="body-grid">
+
+  <!-- LEFT COL -->
+  <aside class="left-col">
+
+    <div class="left-section">
+      <span class="left-label">Navigate</span>
+      <ul class="left-links">
+        <li><a href="#hits">Quick Hits</a></li>
+        <li><a href="#cv">Extended CV</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <hr class="left-rule"/>
+
+    <div class="left-section">
+      <span class="left-label">Disciplines</span>
+      <ul class="left-items">
+        <li>Scoring</li>
+        <li>Music Production</li>
+        <li>Sound Design</li>
+        <li>Immersive Mixing</li>
+        <li>Foley &amp; Field Recording</li>
+      </ul>
+    </div>
+
+    <hr class="left-rule"/>
+
+    <div class="left-section">
+      <span class="left-label">Based in</span>
+      <ul class="left-items">
+        <li>Los Angeles</li>
+      </ul>
+    </div>
+
+    <div class="left-bottom">
+      <a href="/cdn-cgi/l/email-protection#2c46595f5845426c5c435f5801414d414e43024f4341">Email →</a>
+      <a href="https://www.linkedin.com/in/justinenoch/" target="_blank">LinkedIn →</a>
+      <a href="http://ujstinechno.com" target="_blank">Website →</a>
+    </div>
+
+  </aside>
+
+  <!-- RIGHT COL -->
+  <div class="right-col">
+
+    <!-- HEADER -->
+    <header class="page-header">
+      <div class="header-bio">
+        <h1 class="header-name">Justin<br>Enoch</h1>
+        <div class="bio-text">
+          <p>is a Romanian-born, LA-based sound designer, composer, and interdisciplinary artist.</p> 
+          <p>They work with the Post Collective <a class="bio-link" href="https://post-mambo.com/" target="_blank">Post Mambo</a>, produce music as <a class="bio-link" href="https://soundcloud.com/romanian_soundbath" target="_blank">Romanian Soundbath</a> and run <a class="bio-link" href="https://soundcloud.com/radiobenska" target="_blank">Radio Benska</a> on KCHUNG Public at the Geffen Contemporary</p>
+          <p>Currently, they're pursuing an MFA in immersive mixing under David Novack at Universidade Lusofona in Portugal.</p> 
+        </div>
+      </div>
+      <div class="header-photo">
+        <img src="WorkPhoto2026.jpg" alt="Justin Enoch"/>
+      </div>
+    </header>
+
+    <!-- QUICK HITS -->
+    <div class="section-label" id="hits">QUICK HITS</div>
+    
+    <div class="hit">
+      <div class="hit-name">"Anything That Moves"</div>
+      <div class="hit-dir">Dir. Alex Phillips — Vinegar Syndrome</div>
+      <div class="hit-role">Supervising Sound Editor &amp; Re-Recording Mixer</div>
+    </div>
+    <div class="hit">
+      <div class="hit-name">"Tahara"</div>
+      <div class="hit-dir">Dir. Olivia Peace — Film Movement</div>
+      <div class="hit-role">Supervising Sound Editor</div>
+    </div>
+    <div class="hit">
+      <div class="hit-name">"Flail"</div>
+      <div class="hit-dir">Dir. Ben Gauthier - Sundance</div>
+      <div class="hit-role">Composer, Sound Designer &amp; Re-Recording Mixer</div>
+    </div>
+    <div class="hit">
+      <div class="hit-name">"The Threshing"</div>
+      <div class="hit-dir">Dir. Sean Mannion — Yellow Veil</div>
+      <div class="hit-role">Composer, Supervising Sound Editor &amp; Re-Recording Mixer</div>
+    </div>
+    <div class="hit">
+      <div class="hit-name">"Against Reality"</div>
+      <div class="hit-dir">Dir. Olivia Peace — Arte</div>
+      <div class="hit-role">Sound Designer &amp; Composer</div>
+    </div>
+    <div class="hit">
+      <div class="hit-name">"Hold Me Close"</div>
+      <div class="hit-dir">Dir. Aurora Brachman &amp; Latajh Weaver — Sundance</div>
+      <div class="hit-role">Sound Designer &amp; Re-Recording Mixer</div>
+    </div>
+    <div class="hit">
+      <div class="hit-name">"Debaters"</div>
+      <div class="hit-dir">Dir. Alex Heller — Sundance</div>
+      <div class="hit-role">Sound Designer &amp; Re-Recording Mixer</div>
+    </div>
+    <div class="hit">
+      <div class="hit-name">"Dream Team: Birth of the Modern Athlete"</div>
+      <div class="hit-dir">Dir. The Malloys — Paramount</div>
+      <div class="hit-role">Composer</div>
+    </div>
+
+    <!-- EXTENDED CV -->
+    <div class="section-label" id="cv">Extended CV</div>
+
+    <!-- 2025 -->
+    <div class="cv-year">2025</div>
+
+    <div class="cv-entry">
+      <div class="cv-left">
+        <div class="cv-title">"Anything That Moves" — Vinegar Syndrome</div>
+        <div class="cv-meta">Narrative Feature · Dir. Alex Phillips · 76:55</div>
+        <ul class="cv-awards">
+          <li>Fantasia 2025 Official Selection</li>
+          <li>Sitges 2025 Official Selection</li>
+          <li>Lausanne Underground 2025 "Best Feature Film"</li>
+        </ul>
+        <a class="cv-link" href="https://youtu.be/lP_0tilCwng" target="_blank">Watch trailer →</a>
+      </div>
+      <div class="cv-right">Sound Design<br>Foley<br>Mix</div>
+    </div>
+
+    <div class="cv-entry">
+      <div class="cv-left">
+        <div class="cv-title">"Hold Me Close" — PBS</div>
+        <div class="cv-meta">Documentary · Dir. Aurora Brachman, Latajh Weaver · 19:13</div>
+        <ul class="cv-awards">
+          <li>Sundance 2025 Official Selection</li>
+          <li>True/False 2025 Official Selection</li>
+          <li>DocNYC 2025 Official Selection</li>
+          <li>MoMA Screening</li>
+        </ul>
+      </div>
+      <div class="cv-right">Sound Design<br>Foley<br>Mix<br>Addt'l Score</div>
+    </div>
+
+    <div class="cv-entry">
+      <div class="cv-left">
+        <div class="cv-title">"Debaters" — Full Spectrum Features</div>
+        <div class="cv-meta">Narrative Short · Dir. Alex Heller · 9:50</div>
+        <ul class="cv-awards">
+          <li>Sundance 2025 Official Selection</li>
+          <li>Sundance Shorts US Tour</li>
+        </ul>
+      </div>
+      <div class="cv-right">Sound Design<br>Foley<br>Mix</div>
+    </div>
+
+    <div class="cv-entry">
+      <div class="cv-left">
+        <div class="cv-title">"Threshing" — Yellow Veil Pictures</div>
+        <div class="cv-meta">Narrative Feature · Dir. Sean Mannion · 88:34</div>
+        <ul class="cv-awards">
+          <li>SXSW Sydney 2025 Official Selection</li>
+        </ul>
+      </div>
+      <div class="cv-right">Sound Design<br>Score<br>Mix</div>
+    </div>
+
+    <div class="cv-entry">
+      <div class="cv-left">
+        <div class="cv-title">"Being Bublé"</div>
+        <div class="cv-meta">Documentary · Dir. Dan Pearlman · 20:42</div>
+        <a class="cv-link" href="https://www.nytimes.com/2025/12/06/arts/michael-buble-impersonator-documentary.html" target="_blank">NYT feature →</a>
+      </div>
+      <div class="cv-right">Sound Design<br>Foley<br>Mix</div>
+    </div>
+
+    <div class="cv-entry">
+      <div class="cv-left">
+        <div class="cv-title">"No Sex"</div>
+        <div class="cv-meta">Narrative Short · Dir. Dan Pearlman · 9:12</div>
+      </div>
+      <div class="cv-right">Sound Design<br>Foley<br>Mix</div>
+    </div>
+
+    <div class="cv-entry">
+      <div class="cv-left">
+        <div class="cv-title">"Thingy"</div>
+        <div class="cv-meta">Narrative Feature · Dir. Jae Matthews · 86:07</div>
+      </div>
+      <div class="cv-right">Sound Design<br>Foley<br>Mix</div>
+    </div>
+
+    <div class="cv-entry">
+      <div class="cv-left">
+        <div class="cv-title">"Six Till Midnight"</div>
+        <div class="cv-meta">Narrative Feature · Dir. Andrew Donoho · 78:00</div>
+      </div>
+      <div class="cv-right">Developmental<br>Sound Design</div>
+    </div>
+
+    <div class="cv-entry">
+      <div class="cv-left">
+        <div class="cv-title">MovieMaker Magazine — "Feral Filmmaking"</div>
+        <div class="cv-meta">Press · Margeaux Sippel</div>
+      </div>
+      <div class="cv-right">Press</div>
+    </div>
+
+    <!-- 2024 -->
+    <div class="cv-year">2024</div>
+
+    <div class="cv-entry">
+      <div class="cv-left">
+        <div class="cv-title">"Flail" — Forbes Land and Cattle</div>
+        <div class="cv-meta">Short Film · Dir. Ben Gauthier · 13:35</div>
+        <ul class="cv-awards">
+          <li>Sundance 2024 Official Selection</li>
+          <li>Best Comedy Short — Palm Springs International ShortFest 2023</li>
+          <li>NoBudge Best of 2024</li>
+        </ul>
+        <a class="cv-link" href="https://youtu.be/v-NrARw_3SM" target="_blank">Watch on YouTube →</a>
+      </div>
+      <div class="cv-right">Sound Design<br>Score<br>Mix</div>
+    </div>
+
+    <div class="cv-entry">
+      <div class="cv-left">
+        <div class="cv-title">"Inside the Red Sea Mission" — Vice Media</div>
+        <div class="cv-meta">Feature Documentary · Dir. Alex Chitty &amp; Jacob Burghart · 80:00</div>
+      </div>
+      <div class="cv-right">Score</div>
+    </div>
+
+    <div class="cv-entry">
+      <div class="cv-left">
+        <div class="cv-title">"Untitled Doc Project" — Ways &amp; Means</div>
+        <div class="cv-meta">Branded Documentary · Dir. Aurora Brachman · 18:02</div>
+      </div>
+      <div class="cv-right">Sound Design<br>Foley<br>Mix</div>
+    </div>
+
+    <div class="cv-entry">
+      <div class="cv-left">
+        <div class="cv-title">"Clayton DC" — Superprime</div>
+        <div class="cv-meta">Commercial · Dir. Spencer Creigh · 0:60</div>
+      </div>
+      <div class="cv-right">Sound Design<br>Mix</div>
+    </div>
+
+    <div class="cv-entry">
+      <div class="cv-left">
+        <div class="cv-title">"Intruder"</div>
+        <div class="cv-meta">Narrative Short · Dir. Camille Casmier · 13:45</div>
+        <ul class="cv-awards">
+          <li>NoBudge @ Nitehawk Cinema</li>
+        </ul>
+      </div>
+      <div class="cv-right">Sound Design<br>Mix</div>
+    </div>
+
+    <div class="cv-entry">
+      <div class="cv-left">
+        <div class="cv-title">"Little Funky Son" — Reserve Matinee</div>
+        <div class="cv-meta">Full Length Album · 38:56</div>
+        <a class="cv-link" href="https://reservematinee.bandcamp.com/album/little-funky-son" target="_blank">Listen on Bandcamp →</a>
+      </div>
+      <div class="cv-right">Production<br>Songwriting</div>
+    </div>
+
+    <div class="cv-entry">
+      <div class="cv-left">
+        <div class="cv-title">"The Necessity Of It"</div>
+        <div class="cv-meta">Narrative Short · Dir. Danting Chen · 12:33</div>
+      </div>
+      <div class="cv-right">Sound Design<br>Mix</div>
+    </div>
+
+    <div class="cv-entry">
+      <div class="cv-left">
+        <div class="cv-title">"Hot Seat"</div>
+        <div class="cv-meta">Narrative Short · Dir. Sohrob Nayebaziz · 13:21</div>
+        <ul class="cv-awards">
+          <li>NewFest Official Selection &amp; Special Mention: Best New York Short</li>
+          <li>Newfest Premiere</li>
+        </ul>
+      </div>
+      <div class="cv-right">Score</div>
+    </div>
+
+    <div class="cv-entry">
+      <div class="cv-left">
+        <div class="cv-title">"63 Raw Acres"</div>
+        <div class="cv-meta">Narrative Short · Dir. Brandon Lavoie · 6:45</div>
+        <a class="cv-link" href="https://vimeo.com/934490860" target="_blank">Watch on Vimeo →</a>
+      </div>
+      <div class="cv-right">Sound Design<br>Mix</div>
+    </div>
+
+    <div class="cv-entry">
+      <div class="cv-left">
+        <div class="cv-title">"Holiday House"</div>
+        <div class="cv-meta">Narrative Short · Dir. Alex Heller · 12:33</div>
+        <ul class="cv-awards">
+          <li>Aspen Shorts Fest 2024 Official Selection</li>
+          <li>Palm Springs ShortFest 2024 Official Selection</li>
+          <li>Nashville FF 2024 Official Selection</li>
+        </ul>
+        <a class="cv-link" href="https://youtu.be/mGD7i9M2iCs" target="_blank">Watch on YouTube →</a>
+      </div>
+      <div class="cv-right">Sound Design<br>Foley<br>Mix</div>
+    </div>
+
+    <div class="cv-entry">
+      <div class="cv-left">
+        <div class="cv-title">"Practice Space"</div>
+        <div class="cv-meta">Narrative Short · Dir. Dan Pearlman · 10:00</div>
+      </div>
+      <div class="cv-right">Sound Design<br>Mix</div>
+    </div>
+
+    <!-- 2023 -->
+    <div class="cv-year">2023</div>
+
+    <div class="cv-entry">
+      <div class="cv-left">
+        <div class="cv-title">Sound Design Reel — Post Mambo</div>
+        <a class="cv-link" href="https://vimeo.com/864106562/4931edd533" target="_blank">Watch on Vimeo →</a>
+      </div>
+      <div class="cv-right">Sound Design<br>Score<br>Mix</div>
+    </div>
+
+    <div class="cv-entry">
+      <div class="cv-left">
+        <div class="cv-title">"Shine A Light" — FAMILIA</div>
+        <div class="cv-meta">Commercial · Dir. Brandon Lavoie · 8:22, 0:60 ×3, 0:30 ×1, 0:15 ×6</div>
+      </div>
+      <div class="cv-right">Sound Design<br>Mix</div>
+    </div>
+
+    <div class="cv-entry">
+      <div class="cv-left">
+        <div class="cv-title">"San Francisco" — IKEA</div>
+        <div class="cv-meta">Commercial · Dir. Brandon Lavoie · 2:16</div>
+      </div>
+      <div class="cv-right">Sound Design<br>Mix</div>
+    </div>
+
+    <div class="cv-entry">
+      <div class="cv-left">
+        <div class="cv-title">"Chutney Manor" — Cpics</div>
+        <div class="cv-meta">Limited Series · Dir. Ronak Shah · 15:55 ×10</div>
+      </div>
+      <div class="cv-right">Sound Design<br>Mix</div>
+    </div>
+
+    <div class="cv-entry">
+      <div class="cv-left">
+        <div class="cv-title">"Moi-Même"</div>
+        <div class="cv-meta">Feature · Dir. Mojo Lorwin · 76:00</div>
+        <a class="cv-link" href="https://www.nytimes.com/2022/06/22/theater/mabou-mines-anniversary.html" target="_blank">NYT feature →</a>
+      </div>
+      <div class="cv-right">ADR Engineer</div>
+    </div>
+
+    <div class="cv-entry">
+      <div class="cv-left">
+        <div class="cv-title">"Wisdom Teeth"</div>
+        <div class="cv-meta">Short Film · Dir. Madeline Plumley · 20:02</div>
+        <a class="cv-link" href="https://player.vimeo.com/video/945393509" target="_blank">Watch on Vimeo →</a>
+      </div>
+      <div class="cv-right">Sound Design<br>Score<br>Mix</div>
+    </div>
+
+    <!-- 2022 -->
+    <div class="cv-year">2022</div>
+
+    <div class="cv-entry">
+      <div class="cv-left">
+        <div class="cv-title">"Dear Rich" — Stept Studios</div>
+        <div class="cv-meta">Branded Content · Dir. Brandon Lavoie · 14:43</div>
+        <ul class="cv-awards">
+          <li>Vimeo Staff Pick</li>
+          <li>The One Club's Best Branded Entertainment — Longform Nominee</li>
+          <li>Clio Silver Winner</li>
+        </ul>
+        <a class="cv-link" href="https://vimeo.com/786646692" target="_blank">Watch on Vimeo →</a>
+      </div>
+      <div class="cv-right">Sound Design<br>Mix</div>
+    </div>
+
+    <div class="cv-entry">
+      <div class="cv-left">
+        <div class="cv-title">"Against Reality"</div>
+        <div class="cv-meta">Experimental Narrative · Dir. Olivia Peace · 5:20</div>
+        <ul class="cv-awards">
+          <li>Official Selection TIFF 2022</li>
+          <li>Student Academy Awards — Gold in Alternative / Experimental</li>
+        </ul>
+        <a class="cv-link" href="https://youtu.be/dDIWUWkw4oE" target="_blank">Watch on YouTube →</a>
+      </div>
+      <div class="cv-right">Sound Design<br>Score<br>Mix</div>
+    </div>
+
+    <div class="cv-entry">
+      <div class="cv-left">
+        <div class="cv-title">"Illegal Trade: Season One" — Vice Media</div>
+        <div class="cv-meta">Docu-Series · Dir. Alex Chitty · 60:00 ×2</div>
+      </div>
+      <div class="cv-right">Score</div>
+    </div>
+
+    <div class="cv-entry">
+      <div class="cv-left">
+        <div class="cv-title">"Visit Morocco" — Morocco Tourism Board</div>
+        <div class="cv-meta">Commercial · 0:60</div>
+        <a class="cv-link" href="https://vimeo.com/749287676" target="_blank">Watch on Vimeo →</a>
+      </div>
+      <div class="cv-right">Sound Design<br>Mix</div>
+    </div>
+
+    <div class="cv-entry">
+      <div class="cv-left">
+        <div class="cv-title">"Moments for Love" — The Madrona</div>
+        <div class="cv-meta">Commercial · Dir. Brandon Lavoie · 1:30, 0:60, 0:30, 0:15</div>
+        <a class="cv-link" href="https://vimeo.com/738339142" target="_blank">Watch on Vimeo →</a>
+      </div>
+      <div class="cv-right">Sound Design<br>Mix</div>
+    </div>
+
+    <div class="cv-entry">
+      <div class="cv-left">
+        <div class="cv-title">"NAPA" — Neiman Marcus</div>
+        <div class="cv-meta">Commercial · Dir. Brandon Lavoie · 0:45</div>
+        <a class="cv-link" href="https://vimeo.com/bylavoie/neiman" target="_blank">Watch on Vimeo →</a>
+      </div>
+      <div class="cv-right">Sound Design<br>Mix</div>
+    </div>
+
+    <div class="cv-entry">
+      <div class="cv-left">
+        <div class="cv-title">"Tahara" — Film Movement</div>
+        <div class="cv-meta">Feature Film · Dir. Olivia Peace</div>
+        <ul class="cv-awards">
+          <li>Theatrical release, June 2022</li>
+          <li>New York Times Critic's Pick</li>
+          <li>Them Magazine — Favorite LGBTQ+ Movies of 2022</li>
+        </ul>
+      </div>
+      <div class="cv-right">Sound Design<br>Mix</div>
+    </div>
+
+    <!-- 2020 -->
+    <div class="cv-year">2020</div>
+
+    <div class="cv-entry">
+      <div class="cv-left">
+        <div class="cv-title">"The Cinch" — Indie</div>
+        <div class="cv-meta">Documentary · Dir. Ian McGee · 12:00</div>
+        <ul class="cv-awards">
+          <li>Best Original Score — Frostbite International Film Festival</li>
+          <li>Best Documentary Short — Madrid Film Festival</li>
+        </ul>
+        <a class="cv-link" href="https://vimeo.com/517896071" target="_blank">Watch on Vimeo →</a>
+      </div>
+      <div class="cv-right">Sound Design<br>Score<br>Mix</div>
+    </div>
+
+    <div class="cv-entry">
+      <div class="cv-left">
+        <div class="cv-title">"Day to Night" — Aster Farms</div>
+        <div class="cv-meta">Commercial · Dir. Brandon Lavoie · 1:15</div>
+      </div>
+      <div class="cv-right">Sound Design<br>Mix</div>
+    </div>
+
+    <div class="cv-entry">
+      <div class="cv-left">
+        <div class="cv-title">"NYC Transit Workers" — New York Times</div>
+        <div class="cv-meta">Interactive Media · Dir. Jonah Markowitz</div>
+        <a class="cv-link" href="https://www.nytimes.com/interactive/2020/07/26/nyregion/nyc-covid-19-mta-transit-workers.html" target="_blank">Read at NYT →</a>
+      </div>
+      <div class="cv-right">Sound Design<br>Mix</div>
+    </div>
+
+    <div class="cv-entry">
+      <div class="cv-left">
+        <div class="cv-title">"Nenad, Who Plays Ping Pong" — Indie</div>
+        <div class="cv-meta">Documentary · Dir. Brandon Lavoie · 5:29</div>
+        <ul class="cv-awards">
+          <li>2020 Cannes Young Director Award Shortlist</li>
+          <li>Official Selection — 2020 Mountainfilm Festival</li>
+          <li>Vimeo Staff Pick</li>
+          <li>Featured on Directors Library &amp; Shots</li>
+          <li>Daily Short Pick — FilmShortage.com</li>
+        </ul>
+        <a class="cv-link" href="https://vimeo.com/422138964" target="_blank">Watch on Vimeo →</a>
+      </div>
+      <div class="cv-right">Sound Design<br>Mix</div>
+    </div>
+
+    <!-- 2019 + -->
+    <div class="cv-year">2019 +</div>
+
+    <div class="cv-entry">
+      <div class="cv-left">
+        <div class="cv-title">ONG 3 — Counter-Public Triennial</div>
+        <div class="cv-meta">Group Show · Prod. Biota, Fabricatorz Foundation &amp; The Luminary</div>
+        <div class="cv-meta">With Bearcat, He Valencia, Ra Child, Cauleen Smith, Dwight Portocarrero, Matt Ruzicka, Carter Frerichs</div>
+      </div>
+      <div class="cv-right">Lighting Design<br>Interactive Sound<br>Installation<br>Curation</div>
+    </div>
+
+    <div class="cv-entry">
+      <div class="cv-left">
+        <div class="cv-title">"The Future of Club Culture: A Conversation with Nina Posner"</div>
+        <div class="cv-meta">Livestream &amp; Podcast · DFA Records · 60:00</div>
+      </div>
+      <div class="cv-right">Curation<br>Location Sound</div>
+    </div>
+
+    <div class="cv-entry">
+      <div class="cv-left">
+        <div class="cv-title">"The Space of Sound: A Conversation with Chandler Ahrens"</div>
+        <div class="cv-meta">Livestream &amp; Podcast · Washington University in St. Louis · 60:00</div>
+      </div>
+      <div class="cv-right">Curation<br>Location Sound</div>
+    </div>
+
+    <div class="cv-entry">
+      <div class="cv-left">
+        <div class="cv-title">"blank" — Indie</div>
+        <div class="cv-meta">Music Documentary · Dir. Samuele Baiamonte · Prod. Bruton Stroube · 4:23</div>
+      </div>
+      <div class="cv-right">Sound Mix</div>
+    </div>
+
+    <div class="cv-entry">
+      <div class="cv-left">
+        <div class="cv-title">"Kelly Slater Surfs in S.E.A. JEANS" — Outerknown</div>
+        <div class="cv-meta">Commercial · Dir. Alek Parker · 0:30</div>
+      </div>
+      <div class="cv-right">Sound Mix</div>
+    </div>
+
+    <div class="cv-entry">
+      <div class="cv-left">
+        <div class="cv-title">ONG 2</div>
+        <div class="cv-meta">Collaborative Club Experience · Prod. Biota &amp; Fabricatorz Foundation</div>
+        <div class="cv-meta">With GRRL, DJ Taye, Failed Shape, Tj Hughes, Ann Johnson, Matt Ruzicka, Ian Cunningham</div>
+      </div>
+      <div class="cv-right">Lighting Design<br>Interactive Sound<br>Installation<br>Curation</div>
+    </div>
+
+    <div class="cv-entry">
+      <div class="cv-left">
+        <div class="cv-title">"Bubbi" — Indie</div>
+        <div class="cv-meta">Documentary · Dir. Brandon Lavoie · 5:43</div>
+        <ul class="cv-awards">
+          <li>Daily Short Pick &amp; Online Premiere — Film Shortage</li>
+          <li>Shots.net "Shots Presents" Showcase, September 2019</li>
+          <li>Big Apple Film Festival Official Selection</li>
+        </ul>
+      </div>
+      <div class="cv-right">Sound Design</div>
+    </div>
+
+    <div class="cv-entry">
+      <div class="cv-left">
+        <div class="cv-title">"Sunset Tower Hotel" — Sunset Tower</div>
+        <div class="cv-meta">Branded Content · Dir. Matthew Hranek · 2018</div>
+      </div>
+      <div class="cv-right">Score</div>
+    </div>
+
+    <div class="cv-entry">
+      <div class="cv-left">
+        <div class="cv-title">"Save the Wild" — Tiffany &amp; Co.</div>
+        <div class="cv-meta">NY Fashion Week Commercial Series · Dir. Dewey Nicks · 2018</div>
+      </div>
+      <div class="cv-right">Score</div>
+    </div>
+
+    <div class="cv-entry">
+      <div class="cv-left">
+        <div class="cv-title">"My Ozarks: Episode 1"</div>
+        <div class="cv-meta">Documentary · Dir. Ian McGee · Prod. The Paint Shop · 3:56 · 2018</div>
+      </div>
+      <div class="cv-right">Score</div>
+    </div>
+
+    <div class="cv-entry">
+      <div class="cv-left">
+        <div class="cv-title">"Los dos gringos" — Suzuki</div>
+        <div class="cv-meta">Branded Content · Dir. Ian McGee · 9:18 · 2017</div>
+      </div>
+      <div class="cv-right">Score</div>
+    </div>
+
+    <div class="cv-entry">
+      <div class="cv-left">
+        <div class="cv-title">"Best Miles Ahead" — Castrol</div>
+        <div class="cv-meta">Commercial · Dir. Ricardo Rojas · 1:03 · 2014</div>
+      </div>
+      <div class="cv-right">Score</div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="page-footer" id="contact">
+      <div class="footer-col">
+        <span class="footer-col-label">Justin Enoch</span>
+        <span class="footer-name">Sound<br>Designer</span>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-label">Contact</span>
+        <a href="/cdn-cgi/l/email-protection#503a252324393e35102235233f253e3423313d203c35237e333f3d"><span class="__cf_email__" data-cfemail="b6dcc3c5c2dfd8f6c6d9c5c29bdbd7dbd4d998d5d9db">[email&#160;protected]</span> →</a>
+        <a href="https://www.linkedin.com/in/justinenoch/" target="_blank">LinkedIn →</a>
+        <a href="http://ujstinechno.com" target="_blank">Website →</a>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-label">Navigate</span>
+        <a href="#hits">Quick Hits</a>
+        <a href="#cv">Extended CV</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </footer>
+
+    <div class="foot
