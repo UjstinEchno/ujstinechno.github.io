@@ -184,6 +184,25 @@
       color: var(--muted);
       line-height: 1.8;
     }
+    .location-hover {
+      position: relative;
+      cursor: default;
+    }
+    .location-hover .hit-poster {
+      display: none;
+      position: fixed;
+      pointer-events: none;
+      z-index: 1000;
+      width: 280px;
+      box-shadow: 4px 4px 24px rgba(0,0,0,0.18);
+      border: var(--rule);
+    }
+    .location-hover .hit-poster img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .location-hover:hover .hit-poster { display: block; }
 
     .left-rule { border: none; border-top: var(--rule); margin: 14px 0; }
 
@@ -577,12 +596,12 @@
     <div class="left-section">
       <span class="left-label">Based in</span>
       <ul class="left-items">
-        <li>Los Angeles</li>
+        <li class="location-hover">Los Angeles<div class="hit-poster"><img src="studio.jpg" alt="Studio"/></div></li>
       </ul>
     </div>
 
     <div class="left-bottom">
-        <a href="mailto:justin@post-mambo.com"target="_blank">email →</a>
+        <a href="/cdn-cgi/l/email-protection#c5afb0b6b1acab85b5aab6b1e8a8a4a8a7aaeba6aaa8" target="_blank">email →</a>
         <a href="https://www.instagram.com/romanian_soundbath/" target="_blank">instagram →</a>
     </div>
 
@@ -1184,7 +1203,7 @@
       </div>
       <div class="footer-col">
         <span class="footer-col-label">Contact</span>
-        <a href="mailto:justin@post-mambo.com"target="_blank">email →</a>
+        <a href="/cdn-cgi/l/email-protection#5f352a2c2b36311f2f302c2b72323e323d30713c3032" target="_blank">email →</a>
         <a href="https://www.instagram.com/romanian_soundbath/" target="_blank">instagram →</a>
       </div>
       <div class="footer-col">
