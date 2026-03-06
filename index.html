@@ -503,6 +503,25 @@
       .footer-col { border-right: none; border-bottom: var(--rule); padding: 20px 18px; }
       .footer-base { padding: 9px 18px; }
     }
+    /* ─── POSTER PREVIEW ─── */
+    .hit-poster {
+      display: none;
+      position: fixed;
+      pointer-events: none;
+      z-index: 1000;
+      width: 220px;
+      box-shadow: 4px 4px 24px rgba(0,0,0,0.18);
+      border: var(--rule);
+    }
+    .hit-poster img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .hit:hover .hit-poster {
+      display: block;
+    }
+
   </style>
 </head>
 <body>
@@ -581,46 +600,54 @@
 
     <!-- QUICK HITS -->
     <div class="section-label" id="hits">QUICK HITS</div>
-    
-    <div class="hit">
+
+    <div class="hit" data-image="poster-anything-that-moves.jpg">
       <div class="hit-name">"Anything That Moves"</div>
       <div class="hit-dir">Dir. Alex Phillips — Vinegar Syndrome</div>
       <div class="hit-role">Supervising Sound Editor &amp; Re-Recording Mixer</div>
+      <div class="hit-poster"><img src="poster-anything-that-moves.jpg" alt=""/></div>
     </div>
-    <div class="hit">
+    <div class="hit" data-image="poster-tahara.jpg">
       <div class="hit-name">"Tahara"</div>
       <div class="hit-dir">Dir. Olivia Peace — Film Movement</div>
       <div class="hit-role">Supervising Sound Editor</div>
+      <div class="hit-poster"><img src="poster-tahara.jpg" alt=""/></div>
     </div>
-    <div class="hit">
+    <div class="hit" data-image="poster-flail.jpg">
       <div class="hit-name">"Flail"</div>
       <div class="hit-dir">Dir. Ben Gauthier - Sundance</div>
       <div class="hit-role">Composer, Sound Designer &amp; Re-Recording Mixer</div>
+      <div class="hit-poster"><img src="poster-flail.jpg" alt=""/></div>
     </div>
-    <div class="hit">
+    <div class="hit" data-image="poster-threshing.jpg">
       <div class="hit-name">"The Threshing"</div>
       <div class="hit-dir">Dir. Sean Mannion — Yellow Veil</div>
       <div class="hit-role">Composer, Supervising Sound Editor &amp; Re-Recording Mixer</div>
+      <div class="hit-poster"><img src="poster-threshing.jpg" alt=""/></div>
     </div>
-    <div class="hit">
+    <div class="hit" data-image="poster-against-reality.jpg">
       <div class="hit-name">"Against Reality"</div>
       <div class="hit-dir">Dir. Olivia Peace — Arte</div>
       <div class="hit-role">Sound Designer &amp; Composer</div>
+      <div class="hit-poster"><img src="poster-against-reality.jpg" alt=""/></div>
     </div>
-    <div class="hit">
+    <div class="hit" data-image="poster-hold-me-close.jpg">
       <div class="hit-name">"Hold Me Close"</div>
       <div class="hit-dir">Dir. Aurora Brachman &amp; Latajh Weaver — Sundance</div>
       <div class="hit-role">Sound Designer &amp; Re-Recording Mixer</div>
+      <div class="hit-poster"><img src="poster-hold-me-close.jpg" alt=""/></div>
     </div>
-    <div class="hit">
+    <div class="hit" data-image="poster-debaters.jpg">
       <div class="hit-name">"Debaters"</div>
       <div class="hit-dir">Dir. Alex Heller — Sundance</div>
       <div class="hit-role">Sound Designer &amp; Re-Recording Mixer</div>
+      <div class="hit-poster"><img src="poster-debaters.jpg" alt=""/></div>
     </div>
-    <div class="hit">
+    <div class="hit" data-image="poster-dream-team.jpg">
       <div class="hit-name">"Dream Team: Birth of the Modern Athlete"</div>
       <div class="hit-dir">Dir. The Malloys — Paramount</div>
       <div class="hit-role">Composer</div>
+      <div class="hit-poster"><img src="poster-dream-team.jpg" alt=""/></div>
     </div>
 
     <!-- EXTENDED CV -->
@@ -1139,4 +1166,32 @@
       </div>
     </footer>
 
-    <div class="foot
+    <div class="footer-base">
+      <span>© Justin Enoch 2025 — All Rights Reserved</span>
+      <span>Los Angeles</span>
+    </div>
+
+  </div><!-- /right-col -->
+</div><!-- /body-grid -->
+
+<!-- POSTER PREVIEW -->
+<script>
+  document.addEventListener('mousemove', (e) => {
+    document.querySelectorAll('.hit-poster').forEach(poster => {
+      const offset = 20;
+      const w = 220;
+      const h = poster.offsetHeight || 300;
+      const left = e.clientX + offset + w > window.innerWidth
+        ? e.clientX - offset - w
+        : e.clientX + offset;
+      const top = e.clientY + offset + h > window.innerHeight
+        ? e.clientY - offset - h
+        : e.clientY + offset;
+      poster.style.left = left + 'px';
+      poster.style.top = top + 'px';
+    });
+  });
+</script>
+
+</body>
+</html>
