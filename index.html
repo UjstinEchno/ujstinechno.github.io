@@ -509,7 +509,7 @@
       position: fixed;
       pointer-events: none;
       z-index: 1000;
-      width: 220px;
+      width: 175px;
       box-shadow: 4px 4px 24px rgba(0,0,0,0.18);
       border: var(--rule);
     }
@@ -1179,7 +1179,7 @@
   document.addEventListener('mousemove', (e) => {
     document.querySelectorAll('.hit-poster').forEach(poster => {
       const offset = 20;
-      const w = 220;
+      const w = 175;
       const h = poster.offsetHeight || 300;
       const left = e.clientX + offset + w > window.innerWidth
         ? e.clientX - offset - w
