@@ -284,45 +284,6 @@
       text-transform: uppercase;
       color: var(--red);
     }
-    .cv-toggle-label {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .cv-toggle-btn {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      background: none;
-      border: none;
-      color: var(--red);
-      font-size: 0.57rem;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      cursor: pointer;
-      padding: 0;
-      font-family: inherit;
-    }
-    .cv-toggle-btn:hover { opacity: 0.7; }
-    .cv-toggle-icon {
-      transition: transform 0.3s ease;
-    }
-    .cv-toggle-btn[aria-expanded="true"] .cv-toggle-icon {
-      transform: rotate(180deg);
-    }
-    .cv-collapsible {
-      display: grid;
-      grid-template-rows: 0fr;
-      transition: grid-template-rows 0.4s ease;
-      overflow: hidden;
-    }
-    .cv-collapsible.open {
-      grid-template-rows: 1fr;
-    }
-    .cv-collapsible-inner {
-      overflow: hidden;
-    }
 
     /* ─── FILM ─── */
     .hit {
@@ -790,18 +751,7 @@
     </a>
 
     <!-- EXTENDED CV -->
-    <div class="section-label cv-toggle-label" id="cv">
-      Extended CV
-      <button class="cv-toggle-btn" id="cv-toggle" aria-expanded="false">
-        <span class="cv-toggle-text">Show</span>
-        <svg class="cv-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12">
-          <polyline points="6,9 12,15 18,9"/>
-        </svg>
-      </button>
-    </div>
-
-    <div class="cv-collapsible" id="cv-collapsible">
-    <div class="cv-collapsible-inner">
+    <div class="section-label" id="cv">Extended CV</div>
 
     <!-- 2025 -->
     <div class="cv-year">2025</div>
@@ -1296,9 +1246,6 @@
       <div class="cv-right">Score</div>
     </div>
 
-    </div><!-- /cv-collapsible-inner -->
-    </div><!-- /cv-collapsible -->
-
     <!-- FOOTER -->
     <footer class="page-footer" id="contact">
       <div class="footer-col">
@@ -1343,17 +1290,6 @@
       poster.style.left = left + 'px';
       poster.style.top = top + 'px';
     });
-  });
-
-  // CV collapsible
-  const cvToggle = document.getElementById('cv-toggle');
-  const cvCollapsible = document.getElementById('cv-collapsible');
-  const cvToggleText = cvToggle.querySelector('.cv-toggle-text');
-
-  cvToggle.addEventListener('click', () => {
-    const isOpen = cvCollapsible.classList.toggle('open');
-    cvToggle.setAttribute('aria-expanded', isOpen);
-    cvToggleText.textContent = isOpen ? 'Hide' : 'Show';
   });
 </script>
 
